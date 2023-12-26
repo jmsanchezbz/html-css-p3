@@ -1,0 +1,274 @@
+/* variables de color */
+:root {
+  --primary-color: rgb(0, 59, 74);
+  --dark-bkg-text-color: white;
+  --accent-color: rgb(191, 12, 240);
+  --light-accent-color: rgb(229, 225, 254);
+  --background-color: rgb(247, 247, 247);
+  --grey-text-color: rgb(158, 157, 171);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+/****************************
+Estilos generales
+*****************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, "Noto Serif";
+  font-weight: 400;
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+h2 {
+}
+
+h3 {
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+        font-weight: 900;
+      }
+}
+
+/****************************
+Header
+*****************************/
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: white;
+}
+
+.logo {
+  padding: 10px;
+}
+
+/****************************
+Menú de navegación
+*****************************/
+nav {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  font-weight: bold;
+}
+
+header nav ul li::after {
+  content: "|";
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+header nav ul li:last-child::after {
+  content: none;
+}
+
+nav ul li a {
+  color: inherit;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+  }
+
+/*************************
+Footer
+**************************/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  padding: 30px 40px;
+  color: white;
+}
+
+ul li {
+  display: inline-block;
+}
+
+footer nav {
+  color: white;
+  text-transform: none;
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.footer-left {
+  text-align: center;
+}
+
+.social-links {
+  text-align: center;
+  padding-top: 15px;
+  padding-right: 5px;
+}
+
+.social-links a:hover {
+    opacity: 70%;
+}
+
+.legal-links li {
+    padding-bottom: 8px;
+}
+
+.legal-links a:hover {
+    color: var(--light-accent-color);
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  footer {
+    flex-direction: row;
+  }
+
+  footer nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  footer nav ul li::after {
+    content: "|";
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  footer nav ul li:last-child::after {
+    content: none;
+  }
+
+  .footer-left {
+    text-align: left;
+  }
+
+  .social-links {
+    text-align: right;
+  }
+}
+
+/*************************
+Main
+**************************/
+/*main {
+  min-height: calc(100vh - 310px);
+}*/
+
+/****************************
+Página de inicio
+*****************************/
+section.moto {
+  background-image: url(../img/hero-image-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 20px;
+  text-align: center;
+  height: 300px;
+  width: 100%;
+}
+
+.moto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.moto .container {
+  text-align: left;
+}
+
+section.articles {
+    background-color: var(--light-accent-color);
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container h1 {
+    width: 55%;
+    object-fit: cover;
+  }
+}
+
+/***************************
+Blog
+***************************/
+
+/****************************
+Vídeos
+*****************************/
+
+/****************************
+ * Common
+ ****************************/
