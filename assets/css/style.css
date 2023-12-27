@@ -18,10 +18,10 @@ Estilos generales
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Lato, "Noto Serif";
 }
 
 body {
-  font-family: Lato, "Noto Serif";
   font-weight: 400;
   color: var(--primary-color);
   background-color: var(--background-color);
@@ -30,10 +30,11 @@ body {
 a {
   color: var(--accent-color);
   text-decoration: none;
+  border-bottom: 1px dotted var(--accent-color);
 }
 
 a:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 h1 {
@@ -42,9 +43,21 @@ h1 {
 }
 
 h2 {
+  font-family: 'Noto Serif';
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 h3 {
+  font-family: 'Noto Serif';
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
 }
 
 @media (min-width: 576px) {
@@ -54,10 +67,10 @@ h3 {
 }
 
 @media (min-width: 1200px) {
-    h1 {
-        font-size: 3rem;
-        font-weight: 900;
-      }
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+  }
 }
 
 /****************************
@@ -74,6 +87,15 @@ header {
 
 .logo {
   padding: 10px;
+}
+
+header a {
+  border: none;
+}
+
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 /****************************
@@ -111,8 +133,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--accent-color);
-  }
+  color: var(--accent-color);
+}
 
 /*************************
 Footer
@@ -153,15 +175,15 @@ footer nav ul {
 }
 
 .social-links a:hover {
-    opacity: 70%;
+  opacity: 70%;
 }
 
 .legal-links li {
-    padding-bottom: 8px;
+  padding-bottom: 8px;
 }
 
 .legal-links a:hover {
-    color: var(--light-accent-color);
+  color: var(--light-accent-color);
 }
 
 @media (min-width: 576px) {
@@ -202,9 +224,6 @@ footer nav ul {
 /*************************
 Main
 **************************/
-/*main {
-  min-height: calc(100vh - 310px);
-}*/
 
 /****************************
 Página de inicio
@@ -220,44 +239,141 @@ section.moto {
   width: 100%;
 }
 
-.moto {
+section.moto {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-section.container {
+section .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-section.moto .container {
+  justify-content: left;
+  padding: 20px;
   text-align: left;
 }
 
 section.articles {
-    background-color: var(--light-accent-color);
+  background-color: var(--light-accent-color);
+}
+
+section.articles article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+figure figcaption {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.legal-info {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+form {
+  width: 80%;
+  margin-right: auto;
+}
+
+form ul {
+  list-style-type: none;
+}
+
+form li {
+  display: list-item;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  display: inline-block;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.button {
+  color: white;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  color: white;
+  background-color: var(--accent-color);
+}
+
+.description {
+  margin-bottom: 30px;
 }
 
 @media (min-width: 576px) {
+  section.articles figure {
+    max-width: 200px;
+
+  }
+
+  section.articles article {
+    display:flex;
+    column-gap: 40px;
+    align-items: center;
+  }
+
+  section.articles article:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  section.articles article:nth-child(odd) figure {
+    transform: rotate(-5deg);
+  }
+  section.articles article:nth-child(even) figure {
+    order: -1;
+    transform: rotate(5deg);
+  }
 }
 
 @media (min-width: 768px) {
 }
 
 @media (min-width: 1200px) {
-  
-
-  .container {
+  .two-cols {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
   }
 
-  .container h1 {
-    width: 55%;
-    object-fit: cover;
+  .col {
+    flex:1;
+  }
+
+  .container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  form {
+    width: 100%;
+    margin-right: auto;
   }
 }
 
@@ -272,3 +388,6 @@ Vídeos
 /****************************
  * Common
  ****************************/
+.italic {
+  font-style: italic;
+}
