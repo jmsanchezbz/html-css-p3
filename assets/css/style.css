@@ -27,6 +27,10 @@ body {
   background-color: var(--background-color);
 }
 
+main {
+  padding: 20px;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -38,19 +42,21 @@ a:hover {
 }
 
 h1 {
+  font-family: "Noto Serif";
   font-size: 2.5rem;
-  font-weight: 900;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
 h2 {
-  font-family: 'Noto Serif';
+  font-family: "Noto Serif";
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 h3 {
-  font-family: 'Noto Serif';
+  font-family: "Noto Serif";
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 20px;
@@ -70,6 +76,10 @@ p {
   h1 {
     font-size: 3rem;
     font-weight: 900;
+  }
+
+  main {
+    padding: 40px;
   }
 }
 
@@ -128,11 +138,11 @@ header nav ul li:last-child::after {
   content: none;
 }
 
-nav ul li a {
+header nav ul li a {
   color: inherit;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
   color: var(--accent-color);
 }
 
@@ -147,25 +157,27 @@ footer {
   background-color: var(--primary-color);
   padding: 30px 40px;
   color: white;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  border: none;
 }
 
 ul li {
   display: inline-block;
 }
 
-footer nav {
+footer ul {
   color: white;
   text-transform: none;
 }
 
-footer nav ul {
+footer .legal-links ul {
   display: flex;
   flex-direction: column;
   padding: 10px;
-}
-
-.footer-left {
-  text-align: center;
 }
 
 .social-links {
@@ -182,7 +194,7 @@ footer nav ul {
   padding-bottom: 8px;
 }
 
-.legal-links a:hover {
+footer a:hover {
   color: var(--light-accent-color);
 }
 
@@ -228,6 +240,10 @@ Main
 /****************************
 Página de inicio
 *****************************/
+main.home {
+  padding: 0;
+}
+
 section.moto {
   background-image: url(../img/hero-image-home.jpg);
   background-repeat: no-repeat;
@@ -237,6 +253,11 @@ section.moto {
   text-align: center;
   height: 300px;
   width: 100%;
+}
+
+section.moto h1 {
+  font-family: Lato;
+  font-weight: 900;
 }
 
 section.moto {
@@ -250,12 +271,17 @@ section .container {
   flex-direction: column;
   align-items: center;
   justify-content: left;
-  padding: 20px;
+
   text-align: left;
+}
+
+section.subscription {
+  padding: 20px;
 }
 
 section.articles {
   background-color: var(--light-accent-color);
+  padding: 20px;
 }
 
 section.articles article {
@@ -329,11 +355,10 @@ input[type="email"] {
 @media (min-width: 576px) {
   section.articles figure {
     max-width: 200px;
-
   }
 
   section.articles article {
-    display:flex;
+    display: flex;
     column-gap: 40px;
     align-items: center;
   }
@@ -362,7 +387,7 @@ input[type="email"] {
   }
 
   .col {
-    flex:1;
+    flex: 1;
   }
 
   .container {
@@ -378,12 +403,116 @@ input[type="email"] {
 }
 
 /***************************
-Blog
-***************************/
+ * Blog
+ ***************************/
+section.blog h2 a {
+  color: var(--primary-color);
+  border: none;
+}
+
+section.blog h2 a:hover {
+  color: var(--accent-color);
+}
+
+section.blog article {
+  background-color: white;
+  margin-bottom: 20px;
+  border: 1px solid var(--light-accent-color);
+}
+
+.blog-info {
+  padding: 20px;
+}
+
+.blog figure {
+  position: relative;
+}
+
+.blog figcaption {
+  color: var(--grey-text-color);
+  text-align: left;
+  padding: 20px 20px 0 20px;
+}
+
+.blog figure .category {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.blog figure .category a {
+  color: white;
+  border: none;
+}
+
+.blog figure .category a:hover {
+  color: var(--accent-color);
+}
+
+.blog .category {
+  background-color: var(--primary-color);
+  padding: 10px;
+}
+
+.blog figure .copyright {
+  position: absolute;
+  bottom: 50px;
+  right: 10px;
+  background-color: white;
+  opacity: 0.7;
+  padding: 5px;
+  font-size: .8rem;
+}
+
+.pagination {
+  width: 140px;
+  margin: 0 auto;
+}
+
+.pagination li {
+  background-color: white;
+  color: var(--primary-color);
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.pagination li:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.pagination li.active {
+  color: white;
+  background-color: var(--accent-color);
+  border: none;
+}
+
+@media (min-width: 576px) {
+
+}
+  
+@media (min-width: 768px) {
+    section.blog {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    section.blog {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    section.blog article:first-child {
+        grid-column: span 2;
+    }
+}
 
 /****************************
-Vídeos
-*****************************/
+ * Vídeos
+ *****************************/
 
 /****************************
  * Common
