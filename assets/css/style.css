@@ -8,11 +8,9 @@
   --grey-text-color: rgb(158, 157, 171);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
-
 /****************************
-Estilos generales
-*****************************/
+ * Estilos generales
+ ****************************/
 
 * {
   margin: 0;
@@ -25,10 +23,6 @@ body {
   font-weight: 400;
   color: var(--primary-color);
   background-color: var(--background-color);
-}
-
-main {
-  padding: 20px;
 }
 
 a {
@@ -45,6 +39,7 @@ h1 {
   font-family: "Noto Serif";
   font-size: 2.5rem;
   font-weight: 600;
+  margin-bottom: 20px;
   margin-bottom: 30px;
 }
 
@@ -62,12 +57,48 @@ h3 {
   margin-bottom: 15px;
 }
 
-p {
-  margin-bottom: 10px;
+abbr {
+  text-decoration: none;
 }
 
-abbr {
-    text-decoration: none;
+figcaption {
+  padding: 10px 15px 10px 15px;
+}
+
+section {
+  padding-bottom: 20px;
+}
+
+blockquote {
+  margin: 10px 0;
+}
+
+article {
+  background-color: white;
+  border: 1px solid var(--light-accent-color);
+}
+
+p {
+  padding-bottom: 10px;
+}
+
+img.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+iframe.video-fluid {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
 }
 
 @media (min-width: 576px) {
@@ -82,14 +113,14 @@ abbr {
     font-weight: 900;
   }
 
-  main {
-    padding: 40px;
+  .container {
+    width: 95%;
   }
 }
 
 /****************************
-Header
-*****************************/
+ * Header
+ ****************************/
 header {
   display: flex;
   flex-direction: row;
@@ -107,14 +138,9 @@ header a {
   border: none;
 }
 
-img.img-fluid {
-  width: 100%;  /* max-width: 100%; */
-  height: auto;
-}
-
 /****************************
-Menú de navegación
-*****************************/
+ * Menú de navegación
+ *****************************/
 nav {
   text-align: center;
   color: var(--primary-color);
@@ -129,7 +155,6 @@ nav ul {
 
 nav ul li {
   display: inline-block;
-  font-weight: bold;
 }
 
 header nav ul li::after {
@@ -144,6 +169,7 @@ header nav ul li:last-child::after {
 
 header nav ul li a {
   color: inherit;
+  font-weight: bold;
 }
 
 header nav ul li a:hover {
@@ -151,13 +177,11 @@ header nav ul li a:hover {
 }
 
 /*************************
-Footer
-**************************/
+ * Footer
+ **************************/
 footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   background-color: var(--primary-color);
   padding: 30px 40px;
   color: white;
@@ -182,12 +206,6 @@ footer .legal-links ul li {
   display: flex;
   flex-direction: column;
 }
-
-/*footer .legal-links ul {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}*/
 
 .social-links {
   text-align: center;
@@ -215,6 +233,8 @@ footer a:hover {
 @media (min-width: 1200px) {
   footer {
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   footer ul {
@@ -245,56 +265,49 @@ footer a:hover {
 }
 
 /*************************
-Main
-**************************/
+ * Main
+ *************************/
 
 /****************************
-Página de inicio
-*****************************/
+ * Página de inicio
+ ****************************/
 main.home {
   padding: 0;
 }
 
-section.moto {
+.moto {
+  display: flex;
+  align-items: center;
   background-image: url(../img/hero-image-home.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding: 20px;
-  text-align: center;
   height: 300px;
   width: 100%;
 }
 
-section.moto h1 {
+.moto h1 {
   font-family: Lato;
   font-weight: 900;
 }
 
-section.moto {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-section .container {
+.subscription .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: left;
-  text-align: left;
 }
 
-section.subscription {
-  padding: 20px;
+.subscription .title {
+  margin-right: auto;
 }
 
-section.articles {
+.home .articles {
   background-color: var(--light-accent-color);
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-section.articles article {
+.home article {
+  background-color: inherit;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -339,7 +352,7 @@ input[type="email"] {
   width: 100%;
   padding: 10px;
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid var(--grey-text-color);
   border-radius: 5px;
   margin-bottom: 15px;
 }
@@ -366,25 +379,24 @@ input[type="email"] {
 }
 
 @media (min-width: 576px) {
-  section.articles figure {
+  .home .articles figure {
     max-width: 200px;
   }
 
-  section.articles article {
+  .home .articles article {
     display: flex;
     column-gap: 40px;
     align-items: center;
   }
 
-  section.articles article:nth-child(even) {
+  .home .articles article:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  section.articles article:nth-child(odd) figure {
+  .home .articles article:nth-child(odd) figure {
     transform: rotate(-5deg);
   }
-  section.articles article:nth-child(even) figure {
-    order: -1;
+  .home .articles article:nth-child(even) figure {
     transform: rotate(5deg);
   }
 }
@@ -393,6 +405,15 @@ input[type="email"] {
 }
 
 @media (min-width: 1200px) {
+  .home .container {
+    width: 60%;
+  }
+
+  .moto .home-title {
+    width: 540px;
+    margin-right: auto;
+  }
+
   .two-items {
     display: flex;
     flex-wrap: wrap;
@@ -401,20 +422,6 @@ input[type="email"] {
 
   .item {
     flex: 1;
-  }
-
-  section.moto .home-title {
-    display:block;
-    width: 540px;
-    padding: 0;
-    margin-right: auto;
-    margin-left:0;
-  }
-  
-  .container {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   form {
@@ -426,43 +433,42 @@ input[type="email"] {
 /***************************
  * Blog
  ***************************/
-section.blog h2 a,
-section.recent h3 a {
+.blog h2 a,
+.recent h3 a {
   color: var(--primary-color);
   border: none;
 }
 
-section.blog h2 a:hover,
-section.recent h3 a:hover {
+.blog h2 a:hover,
+.recent h3 a:hover {
   color: var(--accent-color);
 }
 
-section.blog article,
-section.videos article,
-section.side article {
-  background-color: white;
-  margin-bottom: 20px;
-  border: 1px solid var(--light-accent-color);
+.blog p {
+  margin-bottom: 10px;
 }
 
-.blog-info {
-  padding: 20px;
+.post-info {
+  padding: 15px;
 }
 
 figure {
   position: relative;
 }
 
-figcaption {
+figcaption .caption {
+  display: block;
   color: var(--grey-text-color);
   text-align: left;
-  padding: 10px 20px 10px 20px;
+  font-size: 0.75rem;
 }
 
 figure .category {
   position: absolute;
   top: 20px;
   left: 20px;
+  background-color: var(--primary-color);
+  padding: 10px;
 }
 
 figure .category a {
@@ -472,11 +478,6 @@ figure .category a {
 
 figure .category a:hover {
   color: var(--accent-color);
-}
-
-figure .category {
-  background-color: var(--primary-color);
-  padding: 10px;
 }
 
 .blog figure .copyright {
@@ -492,22 +493,28 @@ figure .category {
 .pagination {
   width: 140px;
   margin: 0 auto;
-}
-
-.pagination ul {
-    margin: 20px 0;
+  margin-top: 20px;
 }
 
 .pagination li {
-  display: inline;
+  display: inline-block;
   list-style: none;
+}
+
+.pagination li.active a {
+  color: white;
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.pagination li a {
   background-color: white;
   color: var(--primary-color);
   padding: 10px;
   border: 1px solid var(--primary-color);
 }
 
-.pagination li:hover {
+.pagination li a:hover {
   background-color: var(--accent-color);
   color: white;
 }
@@ -522,7 +529,7 @@ figure .category {
 }
 
 @media (min-width: 768px) {
-  section.blog {
+  .blog {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -530,12 +537,11 @@ figure .category {
 }
 
 @media (min-width: 1200px) {
-  section.blog,
-  section.videos {
+  .blog {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  section.blog article:first-child {
+  .blog article:first-child {
     grid-column: span 2;
   }
 }
@@ -544,8 +550,8 @@ figure .category {
  * Entrada
  *****************************/
 .breadcrumbs {
-    padding: 10px;
-    text-align: left;
+  padding: 10px;
+  text-align: left;
 }
 
 .breadcrumbs li {
@@ -557,6 +563,15 @@ figure .category {
   font-weight: bold;
 }
 
+.breadcrumbs a {
+  color: var(--primary-color);
+  border: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent-color);
+}
+
 .breadcrumbs li::after {
   content: ">";
   margin-left: 10px;
@@ -565,6 +580,18 @@ figure .category {
 
 .breadcrumbs ul li:last-child::after {
   content: none;
+}
+
+.entries p {
+  margin: 10px 0;
+}
+
+.entries article {
+  border: none;
+}
+
+.entry li {
+  margin-bottom:10px;
 }
 
 article.post {
@@ -612,63 +639,49 @@ article.post cite {
   font-style: italic;
 }
 
-section.recent .figure-content {
-    font-family: 'Noto Serif';
-    padding: 10px;
-}
-
-section.recent figcaption {
-    font-family: Lato,'Noto Serif';
-    padding: 0px;
-}
-
-section.side .categories ul {
+aside .categories ul {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-section.side .categories li {
+aside .categories li a {
+  color: var(--primary-color);
   border: 1px solid var(--primary-color);
-  color: var(--primary-color);
   padding: 5px;
-}
-
-section.side .categories li:hover {
-  background-color: var(--accent-color);
-  color: white !important;
-}
-
-section.side .categories a {
+  display: inline-block;
   color: var(--primary-color);
-  border: none;
 }
 
-section.side .categories a:hover {
+aside .categories li a:hover {
+  background-color: var(--accent-color);
   color: white;
 }
 
 @media (min-width: 576px) {
-  main section.side div.articles {
+}
+
+@media (min-width: 768px) {
+  aside .articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 }
 
-@media (min-width: 768px) {
-
-}
-
 @media (min-width: 1200px) {
-  main div.entry {
+  .entries.container {
+    width: 70%;
+  }
+
+  .entry {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     gap: 20px;
   }
 
-  main section.side div.articles {
+  aside .articles {
     display: flex;
     flex-direction: column;
   }
@@ -677,18 +690,11 @@ section.side .categories a:hover {
 /****************************
  * Vídeos
  *****************************/
-iframe.video-fluid {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    border: 0;
-}
-
 @media (min-width: 576px) {
 }
 
 @media (min-width: 768px) {
-  section.videos {
+  .videos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -696,7 +702,7 @@ iframe.video-fluid {
 }
 
 @media (min-width: 1200px) {
-  section.videos {
+  .videos {
     grid-template-columns: repeat(3, 1fr);
   }
 }
