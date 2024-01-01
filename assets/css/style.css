@@ -76,6 +76,7 @@ blockquote {
 article {
   background-color: white;
   border: 1px solid var(--light-accent-color);
+  margin-bottom: 20px;
 }
 
 p {
@@ -532,7 +533,7 @@ figure .category a:hover {
   .blog {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    column-gap: 20px;
   }
 }
 
@@ -666,7 +667,7 @@ aside .categories li a:hover {
   aside .articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    column-gap: 20px;
   }
 }
 
@@ -697,7 +698,7 @@ aside .categories li a:hover {
   .videos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    column-gap: 20px;
   }
 }
 
