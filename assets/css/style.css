@@ -580,6 +580,10 @@ input[type="email"] {
   content: none;
 }
 
+.entries .intro {
+  font-size: 1.2rem;
+}
+
 .entries p {
   margin: 10px 0;
 }
@@ -588,7 +592,7 @@ input[type="email"] {
   border: none;
 }
 
-.entry li {
+.entry .post li {
   margin-bottom:10px;
 }
 
@@ -603,14 +607,17 @@ input[type="email"] {
   margin-bottom: 20px;
 }
 
-.post .meta {
+.post .caption-content {
   padding: 10px;
-  text-align: left;
 }
 
-.post .meta h1 {
+.post .imagen h1 {
   color: var(--primary-color);
   margin-bottom: 10px;
+}
+
+.figcaption {
+  color: var(--grey-text-color);
 }
 
 .post .caption-category {
