@@ -61,10 +61,6 @@ abbr {
   text-decoration: none;
 }
 
-figcaption {
-  padding: 10px 15px 10px 15px;
-}
-
 section {
   padding-bottom: 20px;
 }
@@ -313,7 +309,7 @@ main.home {
   margin-bottom: 20px;
 }
 
-.home figure figcaption {
+.home .image .meta {
   color: var(--primary-color);
   text-align: right;
   font-size: 0.8rem;
@@ -380,7 +376,7 @@ input[type="email"] {
 }
 
 @media (min-width: 576px) {
-  .home .articles figure {
+  .home .articles .image {
     max-width: 200px;
   }
 
@@ -394,10 +390,10 @@ input[type="email"] {
     flex-direction: row-reverse;
   }
 
-  .home .articles article:nth-child(odd) figure {
+  .home .articles article:nth-child(odd) .image {
     transform: rotate(-5deg);
   }
-  .home .articles article:nth-child(even) figure {
+  .home .articles article:nth-child(even) .image {
     transform: rotate(5deg);
   }
 }
@@ -453,18 +449,19 @@ input[type="email"] {
   padding: 15px;
 }
 
-figure {
+.imagen {
   position: relative;
 }
 
-figcaption .caption {
+.caption {
   display: block;
   color: var(--grey-text-color);
   text-align: left;
   font-size: 0.75rem;
+  padding: 10px 15px 0px 15px;
 }
 
-figure .category {
+.imagen .category {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -472,16 +469,16 @@ figure .category {
   padding: 10px;
 }
 
-figure .category a {
+.imagen .category a {
   color: white;
   border: none;
 }
 
-figure .category a:hover {
+.imagen .category a:hover {
   color: var(--accent-color);
 }
 
-.blog figure .copyright {
+.blog .imagen .copyright {
   position: absolute;
   bottom: 50px;
   right: 10px;
@@ -595,49 +592,58 @@ figure .category a:hover {
   margin-bottom:10px;
 }
 
-article.post {
+.post {
   background-color: white;
   padding: 10px;
   margin-bottom: 20px;
 }
 
-article.post figure {
+.post .imagen {
   background-color: var(--light-accent-color);
   margin-bottom: 20px;
 }
 
-article.post figcaption {
+.post .meta {
   padding: 10px;
   text-align: left;
 }
 
-article.post figcaption h1 {
+.post .meta h1 {
   color: var(--primary-color);
   margin-bottom: 10px;
 }
 
-article.post .caption-category {
+.post .caption-category {
   color: var(--primary-color);
 }
 
-article.post ol,
-article.post ul {
+.post ol,
+.post ul {
   margin-left: 10px;
   padding: 10px;
 }
 
-article.post blockquote {
+.post blockquote {
   margin-left: 20px;
-  border-left: 2px solid var(--accent-color);
+  border-left: 3px solid var(--accent-color);
   padding-left: 10px;
   font-size: 1.2rem;
 }
 
-article.post cite {
+.post cite {
   display: block;
   padding-top: 10px;
   font-size: 0.9rem;
   font-style: italic;
+}
+
+aside .recent h3 {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+aside .recent .caption {
+  padding: 0 10px 10px 10px;
 }
 
 aside .categories ul {
